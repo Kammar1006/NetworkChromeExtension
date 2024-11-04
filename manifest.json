@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "Network Extension",
+    "version": "0.1",
+    "description": "Count number of successfully completed network requests.",
+    "permissions": [
+        "webRequest",
+        "storage",
+        "activeTab",
+        "scripting"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+        "matches": ["<all_urls>"],
+        "js": ["content.js", "infect.js"]
+        }
+    ],
+    "action": {
+        "default_icon": {
+        }
+    } 
+}
